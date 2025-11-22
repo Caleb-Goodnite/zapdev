@@ -123,10 +123,17 @@ export const createWithMessageAndAttachments = action({
     await ctx.runMutation(api.usage.checkAndConsumeCreditForUser, { userId });
 
     // Generate a random project name (mimicking generateSlug from random-word-slugs)
-    const adjectives = ["happy", "sunny", "clever", "bright", "swift", "bold", "calm", "eager"];
+/*    const adjectives = ["happy", "sunny", "clever", "bright", "swift", "bold", "calm", "eager"];
     const nouns = ["project", "app", "site", "tool", "platform", "system", "portal", "hub"];
-    const randomName = `${adjectives[Math.floor(Math.random() * adjectives.length)]}-${nouns[Math.floor(Math.random() * nouns.length)]}`;
-
+    const randomName = `${adjectives[Math.floor(Math.random() * adjectives.length)]}-${nouns[Math.floor(Math.random() * nouns.length)]}`; */
+    
+// Commented out to avoid confusion, if causes errors, just remove the "/* */ from lines 125 and 128
+    
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// If you are using Ai to generate names, you should probably remove the mock generateSlug code so people don't get confused if anyone looks at the code//
+// or so AI doesn't getconfused, thats probably a bigger concern.                                                                                       //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
     // Create the project (we'll default to nextjs, framework detection can be added later)
     const projectId = await ctx.runMutation(api.projects.createForUser, {
       userId,
